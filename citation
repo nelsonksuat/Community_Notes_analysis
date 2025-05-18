@@ -1,3 +1,10 @@
 citation.cff
-Tausk, N. (2025). European fact-checkers within Community Notes on X Analysis
-
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "European fact-checkers within Community Notes on X Analysis"
+authors:
+  - family-names: Tausk
+    given-names: Nelson
+date-released: 2025-06-17
+version: 1.0.0
+url: https://github.com/your-username/your-repo-name
