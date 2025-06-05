@@ -1,0 +1,6 @@
+pip install pandas
+pip install regex
+pip install tldextract
+pip install numpy
+pip install scikit-learn
+pip install matplotlib
