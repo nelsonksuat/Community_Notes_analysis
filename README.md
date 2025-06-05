@@ -59,3 +59,11 @@ This methodology draws on approaches used by Borenstein et al. (2025) and Maldit
 
 ## Repository Structure
 
+import pandas as pd                                         | pip install pandas
+import re                                                   | pip install regex
+import tldextract                                           | pip install tldextract
+import numpy as np                                          | pip install numpy
+from sklearn.preprocessing import MinMaxScaler              | pip install sklearn.preprocessing
+import matplotlib.pyplot as plt                             | pip install matplotlib
+
+
