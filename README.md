@@ -1,69 +1,46 @@
 # European Fact-Checkers within Community Notes on X
 
-This repository contains the data processing scripts, source lists, and analysis for the project *European Fact-Checkers within Community Notes on X* (Tausk, 2025).
+This repository contains the code, datasets, and scripts used in the study *European Fact-Checkers within Community Notes on X* (Tausk, 2025).
 
 ## Overview
+This project analyzes how often European fact-checking organisations are cited in Community Notes on X (formerly Twitter), their reasons for being cited, how they are rated by other contributors, and how often such notes get published.
 
-This project investigates the presence and role of European fact-checking organisations in Community Notes on X (formerly Twitter). It analyzes how often these sources are cited, why they are cited, how they are perceived, and whether their contributions are more or less likely to be published by X.
+## Data Availability
+All data used in this project comes from X's [Community Notes public datasets](https://communitynotes.x.com/guide/nl/under-the-hood/download-data). The datasets are available as regularly updated `.tsv` files and include detailed documentation on structure and fields.
+
+### Datasets Used:
+- `notes-*.tsv`: contains the content of the note, source URLs, and contributor justifications.
+- `noteStatusHistory-*.tsv`: captures the visibility status of each note (e.g., helpful or not helpful).
+- `ratings-*.tsv`: includes individual rating feedback on Community Notes.
+
+These files are imported into pandas DataFrames, cleaned, and linked using the shared `noteId` column.
 
 ## Methodology
 
-### Step 1: Data Collection and Preparation
+### Step 1: Data Preparation (`NOTEBOOK 1 Preparing data.ipynb`)
+All unnecessary columns are dropped, and participant identifiers are removed to ensure contributor anonymity. The notes, status history, and ratings datasets are cleaned and saved in a simplified format. Domains are extracted from the note summaries.
 
-We use publicly available `.tsv` datasets from X’s Community Notes project. Three datasets are used:
+### Step 2: Verification of Source Matching (`NOTEBOOK 2 Manual annotation verification.py`)
+To validate that domain-based matching to EFCSN and EDMO sources is accurate, 100 Community Notes identified as citing European fact-checkers are manually verified. This verification is stored in the `verificationSource` column. The matching achieved 100% accuracy.
 
-- **Notes**: Contains the community-contributed notes with summary text, source URLs, and annotation reasons.
-- **Note Status History**: Indicates whether each note is rated as helpful, unhelpful, or still needs more ratings.
-- **Ratings**: Contains user-level ratings of individual notes.
+### Step 3: Reasoning Behind Citations (`NOTEBOOK 3 Reasoning of a Note.ipynb`)
+This notebook analyzes the reasons contributors provide when proposing Community Notes, especially comparing notes that cite European fact-checkers versus all other notes. This reveals potential differences in citation motives.
 
-All datasets are merged using the unique `noteId`. Participant IDs are removed to preserve privacy. Column selections and modifications are documented in the appendices.
+### Step 4: Perception of Notes (`NOTEBOOK 4 Perception of Notes citing European fact-checkers.ipynb`)
+This step evaluates how notes citing European fact-checkers are rated in terms of `helpfulnessLevel` and `helpfulGoodSources`. These ratings are compared against those of notes citing other sources.
 
-### Step 2: Identifying Fact-Checker Sources
-
-Two manually curated lists of European fact-checkers are used:
-
-- EFCSN (European Fact-Checking Standards Network)
-- EDMO (European Digital Media Observatory)
-
-These lists are saved in `.txt` format and matched against the `sourceURL` column in the Notes dataset.
-
-### Step 3: URL Extraction
-
-We use `tldextract` to extract base domains from the `summary` field and match them against the EFCSN and EDMO lists. To validate our matching method, 100 notes are manually checked; the match accuracy was 100%. This information is stored in the `verificationSource` column.
-
-### Step 4: Motives Behind Citations
-
-We compare the distribution of contributor-provided reasons for submitting notes between:
-
-- Notes citing European fact-checkers
-- All other notes
-
-This reveals whether European sources are invoked for specific topics or similar to other sources.
-
-### Step 5: Perception of Notes
-
-Using the Ratings dataset, we compare how helpful notes citing European fact-checkers are perceived to be versus other notes. Variables analyzed include `helpfulnessLevel` and `helpfulGoodSources`.
-
-### Step 6: Publication on X
-
-We examine whether notes citing European fact-checkers are more or less likely to be rated as helpful and published on X, using the `currentStatus` column from the Note Status History.
+### Step 5: Publication Likelihood (`NOTEBOOK 5 Notes published on X.ipynb`)
+Using the `noteStatusHistory` dataset, this analysis compares whether notes citing European fact-checkers are more or less likely to be published on X. It focuses on the `currentStatus` column.
 
 ### Methodological Justification
-
-This methodology draws on approaches used by Borenstein et al. (2025) and Maldita.es (2025), who developed procedures for working with Community Notes and domain-level classification. The validation step (Step 3) ensures precision. Comparative analyses across all notes increase the robustness of the findings.
+This methodology is adapted from Borenstein et al. (2025) and Maldita.es (2025), with added validation steps to ensure accuracy. All comparisons are made relative to the full Community Notes dataset.
 
 ## Data Summary
+- Timeframe: January 1, 2024 – May 5, 2025
+- Notes collected: 805,975
+- Notes citing European fact-checkers: 5,380 (~0.67%)
 
-- Total collected notes: **805,975** (from Jan 1, 2024 to May 5, 2025)
-- Notes citing European fact-checkers: **5,380** (≈ 0.67%)
+## Citation
+If you use this work, please cite it as:
 
-## Repository Structure
-
-import pandas as pd                                         | pip install pandas
-import re                                                   | pip install regex
-import tldextract                                           | pip install tldextract
-import numpy as np                                          | pip install numpy
-from sklearn.preprocessing import MinMaxScaler              | pip install sklearn.preprocessing
-import matplotlib.pyplot as plt                             | pip install matplotlib
-
-
+Tausk, N. (2025). *European fact-checkers within Community Notes on X Analysis*. GitHub. https://github.com/[your-username]/[your-repo-name]
