@@ -17,6 +17,8 @@ These files are imported into pandas DataFrames, cleaned, and linked using the s
 
 ## NOTEBOOK navigation
 
+(Make sure to first install all the [requirements](https://github.com/nelsonksuat/Community_Notes_analysis/blob/main/requirements.txt); this notebook is tested in Python 3.11)
+
 ### Step 1: Data Preparation (`NOTEBOOK 1 Preparing data.ipynb`)
 All unnecessary columns are dropped, and participant identifiers are removed to ensure contributor anonymity. The notes, status history, and ratings datasets are cleaned and saved in a simplified format. Domains are extracted from the note summaries.
 
