@@ -2,10 +2,10 @@
 
 This repository contains the code used in the Master Thesis *Title* (Tausk, 2025). The repository contains the steps to analyse how often European fact-checking organisations are cited by Community Notes on X, their reasons for being cited, how they are rated by other contributors, and how often such notes get published.
 
-## Data Availability
+## Data availability
 All data used in this project comes from X's [Community Notes public datasets](https://communitynotes.x.com/guide/nl/under-the-hood/download-data). The datasets are available as regularly updated `.tsv` files and include detailed documentation on structure and fields.
 
-### Datasets Used:
+### Datasets used:
 - `notes-*.tsv`: contains the content of the note, source URLs, and contributor justifications.
 - `noteStatusHistory-*.tsv`: captures the visibility status of each note (e.g., helpful or not helpful).
 - `ratings-*.tsv`: includes individual rating feedback on Community Notes.
@@ -16,10 +16,10 @@ These files are imported into pandas DataFrames, cleaned, and linked using the s
 
 (Make sure to first install all the [requirements](https://github.com/nelsonksuat/Community_Notes_analysis/blob/main/requirements.txt); this notebook is tested in Python 3.11)
 
-### Step 1: Data Preparation (`NOTEBOOK 1 Preparing data.ipynb`)
+### Step 1: Data preparation (`NOTEBOOK 1 Preparing data.ipynb`)
 All unnecessary columns are dropped, and participant identifiers are removed to ensure contributor anonymity. The notes, status history, and ratings datasets are cleaned and saved in a simplified format. Domains are extracted from the note summaries.
 
-### Step 2: Verification of Source Matching (`NOTEBOOK 2 Manual annotation verification.py`)
+### Step 2: Verification of source (`NOTEBOOK 2 Manual annotation verification.py`)
 To validate that domain-based matching to EFCSN and EDMO sources is accurate, 100 Community Notes identified as citing European fact-checkers are manually verified. This verification is stored in the `verificationSource` column. The matching for my particular study achieved 100% accuracy.
 
 After the first two notebooks, your datasets should be organised as the following tables:
@@ -66,7 +66,7 @@ After the first two notebooks, your datasets should be organised as the followin
 | 7     | `noteFromEDMO`                    | 1 if the note uses an EDMO fact-checker, 0 otherwise                                             |
 | 8     | `noteFromOtherSource`            | 1 if the note uses another source, 0 otherwise                                                   |
 
-#### Ratings Dataset Structure
+#### Ratings dataset structure
 
 | Index | Column Name                             | Description                                                                                      |
 |-------|------------------------------------------|--------------------------------------------------------------------------------------------------|
@@ -87,25 +87,25 @@ After the first two notebooks, your datasets should be organised as the followin
 
 
 
-### Step 3: Reasoning Behind Citations (`NOTEBOOK 3 Reasoning of a Note.ipynb`)
+### Step 3: Reasoning behind citations (`NOTEBOOK 3 Reasoning of a Note.ipynb`)
 This notebook analyses the reasons contributors provide when proposing Community Notes, especially comparing notes that cite European fact-checkers versus all other notes. This reveals potential differences in citation motives.
 
 ### Step 4: Perception of Notes (`NOTEBOOK 4 Perception of Notes citing European fact-checkers.ipynb`)
 This step evaluates how notes citing European fact-checkers are rated in terms of `helpfulnessLevel` and `helpfulGoodSources`. These ratings are compared against those of notes citing other sources.
 
-### Step 5: Publication Likelihood (`NOTEBOOK 5 Notes published on X.ipynb`)
+### Step 5: Publication likelihood (`NOTEBOOK 5 Notes published on X.ipynb`)
 Using the `noteStatusHistory` dataset, this analysis compares whether notes citing European fact-checkers are more or less likely to be published on X. It focuses on the `currentStatus` column.
 
-## Methodological Justification
+## Methodological justification
 This methodology is adapted from the report by Maldita.es (2025), with one added validation step to ensure accuracy. All comparisons are made relative to the full Community Notes dataset.
 
-## Data Summary for specific case study
+## Data summary for specific case study
 
 - Timeframe: January 1, 2024 – May 5, 2025
 - Notes collected: 805,975
 - Notes citing European fact-checkers: 5,380 (~0.67%)
 
-#### Results of specific case study 
+#### Results of the specific case study
 ![Figure 1](https://github.com/nelsonksuat/Community_Notes_analysis/blob/main/Graphs/Figure%201.png)
 
 ![Figure 2](https://github.com/nelsonksuat/Community_Notes_analysis/blob/main/Graphs/Figure%202.png)
