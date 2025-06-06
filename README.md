@@ -1,4 +1,4 @@
-# European Fact-Checkers within Community Notes on X analysis
+# The embeddedness of European Fact-Checkers within Community Notes on X 
 
 This repository contains the code used in the Master Thesis *Title* (Tausk, 2025). The repository contains the steps to analyse how often European fact-checking organisations are cited by Community Notes on X, their reasons for being cited, how they are rated by other contributors, and how often such notes get published.
 
