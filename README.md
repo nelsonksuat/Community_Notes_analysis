@@ -26,7 +26,7 @@ After the first two notebooks, your datasets should be organised as the followin
 
 #### Notes dataset structure 
 
-| Index | Column Name                               | Description                                                                                       |
+| Index | Column name                               | Description                                                                                       |
 |-------|-------------------------------------------|---------------------------------------------------------------------------------------------------|
 | 0     | `noteId`                                   | Unique ID of Community Note                                                                       |
 | 1     | `createdAtMillis`                          | Time of Note creation                                                                             |
@@ -54,7 +54,7 @@ After the first two notebooks, your datasets should be organised as the followin
 
 #### Note Status History dataset structure
 
-| Index | Column Name                        | Description                                                                                      |
+| Index | Column name                        | Description                                                                                      |
 |-------|------------------------------------|--------------------------------------------------------------------------------------------------|
 | 0     | `noteId`                           | Unique ID of Community Note                                                                      |
 | 1     | `createdAtMillis`                  | Time of Note creation (in milliseconds)                                                          |
@@ -68,7 +68,7 @@ After the first two notebooks, your datasets should be organised as the followin
 
 #### Ratings dataset structure
 
-| Index | Column Name                             | Description                                                                                      |
+| Index | Column name                             | Description                                                                                      |
 |-------|------------------------------------------|--------------------------------------------------------------------------------------------------|
 | 0     | `noteId`                                 | Unique ID of Community Note                                                                      |
 | 1     | `createdAtMillis`                        | Time of Note creation (in milliseconds)                                                          |
