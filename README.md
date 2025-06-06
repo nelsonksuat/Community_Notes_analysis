@@ -25,6 +25,37 @@ All unnecessary columns are dropped, and participant identifiers are removed to 
 ### Step 2: Verification of Source Matching (`NOTEBOOK 2 Manual annotation verification.py`)
 To validate that domain-based matching to EFCSN and EDMO sources is accurate, 100 Community Notes identified as citing European fact-checkers are manually verified. This verification is stored in the `verificationSource` column. The matching for my particular study achieved 100% accuracy.
 
+After the first two notebooks, your datasets should be organised as the following tables:
+
+### Notes Dataset Structure
+
+| Index | Column Name                               | Description                                                                                       |
+|-------|-------------------------------------------|---------------------------------------------------------------------------------------------------|
+| 0     | `noteId`                                   | Unique ID of Community Note                                                                       |
+| 1     | `createdAtMillis`                          | Time of Note creation                                                                             |
+| 2     | `classification`                           | Reason why the Note is added: `"NOT MISLEADING"`, `"MISINFORMED"`, `"POTENTIALLY_MISLEADING"`    |
+| 3     | `misleadingOther`                          | 1 if “Other” is selected as misleading reason, else 0                                             |
+| 4     | `misleadingFactualError`                   | 1 if “It contains a factual error” is selected, else 0                                            |
+| 5     | `misleadingManipulatedMedia`               | 1 if “It contains a digitally altered photo or video” is selected, else 0                         |
+| 6     | `misleadingOutdatedInformation`            | 1 if “It contains outdated information that may be misleading” is selected, else 0                |
+| 7     | `misleadingMissingImportantContext`        | 1 if “It is a misrepresentation or missing important context” is selected, else 0                 |
+| 8     | `misleadingUnverifiedClaimAsFact`          | 1 if “It presents an unverified claim as a fact” is selected, else 0                              |
+| 9     | `misleadingSatire`                         | 1 if “It is a joke or satire that might be misinterpreted as a fact” is selected, else 0          |
+| 10    | `notMisleadingOther`                       | 1 if “Other” is selected as a reason why it's not misleading, else 0                              |
+| 11    | `notMisleadingFactuallyCorrect`            | 1 if “It expresses a factually correct claim” is selected, else 0                                 |
+| 12    | `notMisleadingOutdatedButNotWhenWritten`   | 1 if “This post was correct when written, but is out of date now” is selected, else 0             |
+| 13    | `notMisleadingClearlySatire`               | 1 if “It is clearly satirical/joking” is selected, else 0                                         |
+| 14    | `notMisleadingPersonalOpinion`             | 1 if “It expresses a personal opinion” is selected, else 0                                        |
+| 15    | `trustworthySources`                       | 1 if trustworthy sources are linked, 0 if not                                                     |
+| 16    | `summary`                                  | Community Note text including original URL                                                        |
+| 17    | `sourceURL`                                | Extracted URL from `summary`                                                                      |
+| 18    | `domainExtract`                            | Domain name extracted using `tldextract`                                                          |
+| 19    | `noteFromEFCSN`                            | 1 if Note uses EFCSN fact-checker, 0 otherwise                                                    |
+| 20    | `noteFromEDMO`                             | 1 if Note uses EDMO fact-checker, 0 otherwise                                                     |
+| 21    | `noteFromOtherSource`                      | 1 if Note uses another source, 0 otherwise                                                        |
+| 22    | `verificationSource`                       | 1 if automatic identification was correct, 0 if incorrect                                         |
+
+
 ### Step 3: Reasoning Behind Citations (`NOTEBOOK 3 Reasoning of a Note.ipynb`)
 This notebook analyzes the reasons contributors provide when proposing Community Notes, especially comparing notes that cite European fact-checkers versus all other notes. This reveals potential differences in citation motives.
 
@@ -37,7 +68,7 @@ Using the `noteStatusHistory` dataset, this analysis compares whether notes citi
 ### Methodological Justification
 This methodology is adapted from Borenstein et al. (2025) and Maldita.es (2025), with added validation steps to ensure accuracy. All comparisons are made relative to the full Community Notes dataset.
 
-## Data Summary for specific case-study
+## Data Summary for specific case study
 
 - Timeframe: January 1, 2024 – May 5, 2025
 - Notes collected: 805,975
