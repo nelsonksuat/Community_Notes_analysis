@@ -104,7 +104,7 @@ This methodology is adapted from the report by Maldita.es (2025), with one added
 - Timeframe: January 1, 2024 – May 5, 2025
 - Notes collected: 805,975
 - Notes citing European fact-checkers: 5,380 (~0.67%)
-- Manual annotation proved 100% accuracy of the identified Notes citing European fact-checkers 
+- Manual annotation proved 100% accuracy for the identified Notes citing European fact-checkers 
 
 #### Results of the specific case study
 ![Figure 1](https://github.com/nelsonksuat/Community_Notes_analysis/blob/main/Graphs/Figure%201.png)
