@@ -15,7 +15,7 @@ All data used in this project comes from X's [Community Notes public datasets](h
 
 These files are imported into pandas DataFrames, cleaned, and linked using the shared `noteId` column.
 
-## NOTEBOOK navigation
+### NOTEBOOK navigation
 
 (Make sure to first install all the [requirements](https://github.com/nelsonksuat/Community_Notes_analysis/blob/main/requirements.txt); this notebook is tested in Python 3.11)
 
@@ -27,7 +27,7 @@ To validate that domain-based matching to EFCSN and EDMO sources is accurate, 10
 
 After the first two notebooks, your datasets should be organised as the following tables:
 
-### Notes Dataset Structure
+## Notes dataset structure 
 
 | Index | Column Name                               | Description                                                                                       |
 |-------|-------------------------------------------|---------------------------------------------------------------------------------------------------|
@@ -54,6 +54,40 @@ After the first two notebooks, your datasets should be organised as the followin
 | 20    | `noteFromEDMO`                             | 1 if Note uses EDMO fact-checker, 0 otherwise                                                     |
 | 21    | `noteFromOtherSource`                      | 1 if Note uses another source, 0 otherwise                                                        |
 | 22    | `verificationSource`                       | 1 if automatic identification was correct, 0 if incorrect                                         |
+
+## Note Status History dataset structure
+
+| Index | Column Name                        | Description                                                                                      |
+|-------|------------------------------------|--------------------------------------------------------------------------------------------------|
+| 0     | `noteId`                           | Unique ID of Community Note                                                                      |
+| 1     | `createdAtMillis`                  | Time of Note creation (in milliseconds)                                                          |
+| 2     | `currentStatus`                    | Current status of the note: `"NEEDS_MORE_RATINGS"`, `"CURRENTLY_RATED_HELPFUL"`, `"CURRENTLY_RATED_NOT_HELPFUL"` |
+| 3     | `currentStatusHelpful`            | 1 if the note is currently rated as helpful, 0 otherwise                                         |
+| 4     | `currentStatusNotHelpful`         | 1 if the note is currently rated as not helpful, 0 otherwise                                     |
+| 5     | `currentStatusNeedsMoreRatings`   | 1 if the note needs more ratings, 0 otherwise                                                    |
+| 6     | `noteFromEFCSN`                   | 1 if the note uses an EFCSN fact-checker, 0 otherwise                                            |
+| 7     | `noteFromEDMO`                    | 1 if the note uses an EDMO fact-checker, 0 otherwise                                             |
+| 8     | `noteFromOtherSource`            | 1 if the note uses another source, 0 otherwise                                                   |
+
+## Ratings Dataset Structure
+
+| Index | Column Name                             | Description                                                                                      |
+|-------|------------------------------------------|--------------------------------------------------------------------------------------------------|
+| 0     | `noteId`                                 | Unique ID of Community Note                                                                      |
+| 1     | `createdAtMillis`                        | Time of Note creation (in milliseconds)                                                          |
+| 2     | `agree`                                  | 1 if the contributor agrees with the note, 0 otherwise                                           |
+| 3     | `disagree`                               | 1 if the contributor disagrees with the note, 0 otherwise                                        |
+| 4     | `helpfulnessLevel`                       | Overall helpfulness of the note: `"NOT_HELPFUL"`, `"SOMEWHAT_HELPFUL"`, `"HELPFUL"`             |
+| 5     | `helpfulGoodSources`                     | 1 if “Cites high-quality sources” is selected, 0 otherwise                                       |
+| 6     | `helpfulImportantContext`                | 1 if “Provides important context” is selected, 0 otherwise                                       |
+| 7     | `notHelpfulSourcesMissingOrUnreliable`   | 1 if “Sources missing or unreliable” is selected, 0 otherwise                                    |
+| 8     | `NotHelpfulOpinionSpeculationOrBias`     | 1 if “Opinion, speculation, or bias” is selected, 0 otherwise                                    |
+| 9     | `notHelpfulHardToUnderstand`             | 1 if “Hard to understand” is selected, 0 otherwise                                               |
+| 10    | `noteFromEFCSN`                          | 1 if the note uses an EFCSN fact-checker, 0 otherwise                                            |
+| 11    | `noteFromEDMO`                           | 1 if the note uses an EDMO fact-checker, 0 otherwise                                             |
+| 12    | `noteFromOtherSource`                    | 1 if the note uses another source, 0 otherwise                                                   |
+
+
 
 
 ### Step 3: Reasoning Behind Citations (`NOTEBOOK 3 Reasoning of a Note.ipynb`)
