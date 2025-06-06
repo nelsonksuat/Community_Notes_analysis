@@ -1,6 +1,6 @@
 # European Fact-Checkers within Community Notes on X
 
-This repository contains the code used in the Master Thesis *TILE* (Tausk, 2025). The repository contains the steps to analyse how often European fact-checking organisations are cited by Community Notes on X, their reasons for being cited, how they are rated by other contributors, and how often such notes get published.
+This repository contains the code used in the Master Thesis *Title* (Tausk, 2025). The repository contains the steps to analyse how often European fact-checking organisations are cited by Community Notes on X, their reasons for being cited, how they are rated by other contributors, and how often such notes get published.
 
 ## Data Availability
 All data used in this project comes from X's [Community Notes public datasets](https://communitynotes.x.com/guide/nl/under-the-hood/download-data). The datasets are available as regularly updated `.tsv` files and include detailed documentation on structure and fields.
