@@ -43,6 +43,10 @@ This methodology is adapted from Borenstein et al. (2025) and Maldita.es (2025),
 - Notes collected: 805,975
 - Notes citing European fact-checkers: 5,380 (~0.67%)
 
+
+## Results
+![screenshot](https://github.com/nelsonksuat/Community_Notes_analysis/blob/main/Graphs/Figure%201.png)
+
 ## Citation
 If you use this work, please cite it as:
 
