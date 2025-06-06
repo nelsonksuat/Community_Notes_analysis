@@ -45,7 +45,15 @@ This methodology is adapted from Borenstein et al. (2025) and Maldita.es (2025),
 
 
 ## Results
-![screenshot](https://github.com/nelsonksuat/Community_Notes_analysis/blob/main/Graphs/Figure%201.png)
+![Figure 1](https://github.com/nelsonksuat/Community_Notes_analysis/blob/main/Graphs/Figure%201.png)
+
+![Figure 2](https://github.com/nelsonksuat/Community_Notes_analysis/blob/main/Graphs/Figure%202.png)
+
+![Figure 3](https://github.com/nelsonksuat/Community_Notes_analysis/blob/main/Graphs/Figure%203.png)
+
+![Figure 4](https://github.com/nelsonksuat/Community_Notes_analysis/blob/main/Graphs/Figure%204.png)
+
+
 
 ## Citation
 If you use this work, please cite it as:
