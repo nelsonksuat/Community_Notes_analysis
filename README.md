@@ -100,7 +100,7 @@ This step evaluates how notes citing European fact-checkers are rated in terms o
 Using the `noteStatusHistory` dataset, this analysis compares whether notes citing European fact-checkers are more or less likely to be published on X. It focuses on the `currentStatus` column.
 
 ### Methodological Justification
-This methodology is adapted from Borenstein et al. (2025) and Maldita.es (2025), with added validation steps to ensure accuracy. All comparisons are made relative to the full Community Notes dataset.
+This methodology is adapted from the report by Maldita.es (2025), with one added validation step to ensure accuracy. All comparisons are made relative to the full Community Notes dataset.
 
 ## Data Summary for specific case study
 
@@ -109,7 +109,7 @@ This methodology is adapted from Borenstein et al. (2025) and Maldita.es (2025),
 - Notes citing European fact-checkers: 5,380 (~0.67%)
 
 
-## Results
+## Results of specific case study 
 ![Figure 1](https://github.com/nelsonksuat/Community_Notes_analysis/blob/main/Graphs/Figure%201.png)
 
 ![Figure 2](https://github.com/nelsonksuat/Community_Notes_analysis/blob/main/Graphs/Figure%202.png)
