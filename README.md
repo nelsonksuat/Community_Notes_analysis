@@ -120,4 +120,4 @@ This methodology is adapted from the report by Maldita.es (2025), with one added
 #### Citation
 If you use this work, please cite it as:
 
-Tausk, N. (2025). *The embeddedness of European Fact-Checkers within Community Notes on X *. GitHub. https://github.com/nelsonksuat/community_notes_analysis
+Tausk, N. (2025). *The embeddedness of European Fact-Checkers within Community Notes on X*. GitHub. https://github.com/nelsonksuat/community_notes_analysis
